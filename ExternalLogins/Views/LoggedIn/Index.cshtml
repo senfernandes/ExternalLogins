@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+@model ExternalLogins.ViewModels.DashboardViewModel
+
+<p style="margin-top:60px;"></p>
+<div class="ui two column doubling stackable grid container">
+    <div class="column">
+        <a class="ui card">
+            <div class="content">
+                <div class="header">Individual</div>
+                <div class="meta">
+                </div>
+                <div class="description">
+                    @foreach (var item in Model.Individuals)
+                    {
+                        <div class="ui list">
+
+                            <input type="hidden" value="@item.IndividualId" />
+                            <div class="item">@item.FullName</div>
+                            <div class="item">@item.DateOfBirth.ToString("yyyy-MM-dd")</div>
+                            <div class="item">@item.Address</div>
+                            <div class="item">@item.City</div>
+                            <div class="item">@item.State</div>
+                            <div class="item">@item.ZipCode</div>
+                        </div>
+
+
+                    }
+                </div>
+            </div>
+            <div class="extra content">
+                <div class="right floated author">
+                    <button class="ui primary button">Edit</button>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+
+        $(".rating").rating();
+    });
+</script>

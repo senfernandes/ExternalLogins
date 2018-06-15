@@ -1,0 +1,24 @@
+﻿
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="menu">
+        <div class="item">Hello @UserManager.GetUserName(User)</div>
+        <form asp-controller="Main" asp-action="LogOff" method="post" id="logoutForm" class="item">
+            <button type="submit" class="ui button blue">Log off</button>
+        </form>
+    </div>
+
+}
+else
+{
+    <div class="right menu">
+        <div class="item">
+            <a class="ui button" href="/Main/Index">Log in</a>
+        </div>
+        <div class="item">
+            <a class="ui primary button" href="/Main/Register">Sign Up</a>
+        </div>
+    </div>
+}

@@ -2,11 +2,27 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\css\components\**" />
+    <Content Remove="wwwroot\css\components\**" />
+    <EmbeddedResource Remove="wwwroot\css\components\**" />
+    <None Remove="wwwroot\css\components\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove=".env~RF534f26.TMP" />
+    <None Remove="ViewModels\LoginViewModel.cs~RF410c19.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dotenv.net" Version="1.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="2.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.1.0" />
   </ItemGroup>
 
 </Project>

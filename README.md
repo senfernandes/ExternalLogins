@@ -1,7 +1,6 @@
-# External Logins in .NET Core App
+# External Logins in .NET Core App (beta version)
 App with external logins using .NET Core.
-
-At this point, only Facebook Logins is being implemented.
+At this point (June 16th, 2018), only Facebook Login is being implemented.
 
 ## Create app on Facebook's Developer API (https://developers.facebook.com)
 - Create New App in My Apps menu
@@ -15,3 +14,11 @@ At this point, only Facebook Logins is being implemented.
 - On ```Startup``` file:
     -  Add ```services.AddAuthentication().AddFacebook();``` in the ```ConfigureServices``` method;
     - Add ```app.UseAuthentication();``` in the ```Configure``` method;
+
+## Add Identity (check it out the Project to see configurations)
+- Add corresponding packages
+- Change ```Settings``` file
+- Create tables in database
+
+## Create Facebook login interface
+- Check views and controllers
