@@ -16,7 +16,7 @@ At this point, only Facebook Login is being implemented.
     -  Add ```services.AddAuthentication().AddFacebook();``` in the ```ConfigureServices``` method;
     - Add ```app.UseAuthentication();``` in the ```Configure``` method;
 
-## Add Identity (check it out the Project to see configurations)
+## Add Identity (check the Project out to see configurations)
 - Add corresponding packages
 - Change ```Settings``` file
 - Create tables in database
