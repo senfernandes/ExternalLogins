@@ -4,7 +4,7 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <div class="menu">
-        <div class="item">Hello @UserManager.GetUserName(User)</div>
+        <div class="item">Hello, @UserManager.GetUserName(User)</div>
         <form asp-controller="Main" asp-action="LogOff" method="post" id="logoutForm" class="item">
             <button type="submit" class="ui button blue">Log off</button>
         </form>

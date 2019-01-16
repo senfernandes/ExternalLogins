@@ -36,8 +36,7 @@ namespace ExternalLogins.Controllers
                             lockoutOnFailure: false);
                 if (loginResults.Succeeded)
                 {
-                    return Content(loginResults.Succeeded.ToString());
-                    //return RedirectToAction("Index", "LoggedIn");
+                    return RedirectToAction("Index", "LoggedIn");
 
                 }
                 ModelState.AddModelError(string.Empty, "Invalid Login Information.");
@@ -212,7 +211,7 @@ namespace ExternalLogins.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult ExternalLogin(string provider, string returnUrl = null)
         {
-            var redirectUrl = Url.Action("ExternalLoginCallback", "Main", new { returnUrl = "LoggedIn" });
+            var redirectUrl = Url.Action("ExternalLoginCallback", "Main", new { returnUrl = "~/LoggedIn/Index" });
 
             var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
             return Challenge(properties, provider);

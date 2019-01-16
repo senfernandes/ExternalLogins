@@ -47,7 +47,7 @@ namespace ExternalLogins
             });
 
             services.AddMvc();
-            services.AddSingleton<IProfileRepository, ProfileRepository>();
+            services.AddScoped<IProfileRepository, ProfileRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
