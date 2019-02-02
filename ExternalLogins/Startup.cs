@@ -3,6 +3,7 @@ using ExternalLogins.Models;
 using ExternalLogins.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -29,10 +30,8 @@ namespace ExternalLogins
 
         public IConfigurationRoot Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
             services.AddDbContext<ProfileContext>(
                 options => options.UseSqlServer(Environment.GetEnvironmentVariable("DEFAULT_CONNECTION_STRING")));
 
@@ -40,17 +39,19 @@ namespace ExternalLogins
                 .AddEntityFrameworkStores<ProfileContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddAuthentication().AddFacebook(facebookOptions =>
-            {
-                facebookOptions.AppId = Environment.GetEnvironmentVariable("FACEBOOK_APP_ID");
-                facebookOptions.AppSecret = Environment.GetEnvironmentVariable("FACEBOOK_APP_SECRET");
-            });
+            services.AddAuthentication()
+                .AddFacebook(facebookOptions =>
+                    {
+                        facebookOptions.AppId = Environment.GetEnvironmentVariable("FACEBOOK_APP_ID");
+                        facebookOptions.AppSecret = Environment.GetEnvironmentVariable("FACEBOOK_APP_SECRET");
+                    });
+
+            services.ConfigureApplicationCookie(options => options.LoginPath = "/Main");
 
             services.AddMvc();
             services.AddScoped<IProfileRepository, ProfileRepository>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, ProfileContext context)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
@@ -64,7 +65,6 @@ namespace ExternalLogins
             {
                 app.UseExceptionHandler("/Shared/Error");
             }
-
             app.UseStaticFiles();
 
             app.UseAuthentication();

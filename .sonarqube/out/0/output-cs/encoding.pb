@@ -1,0 +1,17 @@
+b
+YE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\Controllers\LoggedInController.csutf-8^
+UE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\Controllers\MainController.csutf-8n
+eE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\Controllers\ProfileApiControllerController.csutf-8m
+dE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\Migrations\20180615000920_IdentityMigrate.csutf-8Z
+QE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\Models\ApplicationUser.csutf-8U
+LE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\Models\Individual.csutf-8Y
+PE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\Models\ProfileContext.csutf-8K
+BE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\Program.csutf-8a
+XE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\Repository\IProfileRepository.csutf-8`
+WE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\Repository\ProfileRepository.csutf-8K
+BE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\Startup.csutf-8e
+\E:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\ViewComponents\LoginViewComponent.csutf-8a
+XE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\ViewModels\DashboardViewModel.csutf-8q
+hE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\ViewModels\ExternalLoginConfirmationViewModel.csutf-8]
+TE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\ViewModels\LoginViewModel.csutf-8`
+WE:\meus_arquivos\projetos\ExternalLogins\ExternalLogins\ViewModels\RegisterViewModel.csutf-8
