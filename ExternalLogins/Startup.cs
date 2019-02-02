@@ -49,6 +49,7 @@ namespace ExternalLogins
             services.ConfigureApplicationCookie(options => options.LoginPath = "/Main");
 
             services.AddMvc();
+
             services.AddScoped<IProfileRepository, ProfileRepository>();
         }
 
@@ -68,6 +69,8 @@ namespace ExternalLogins
             app.UseStaticFiles();
 
             app.UseAuthentication();
+
+            app.UseHttpsRedirection(); //If we make an HTTP request, it is redirected to an HTTPS request
 
             app.UseMvc(routes =>
             {

@@ -20,7 +20,7 @@ namespace ExternalLogins.Controllers
             _profileRepository = profileRepository;
         }
 
-        
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             var userId = await _userManager.GetUserAsync(HttpContext.User);

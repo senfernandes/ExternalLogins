@@ -46,6 +46,7 @@ namespace ExternalLogins.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         [Route("Main/Login")]
         public IActionResult LoginApi([FromBody]LoginViewModel model)
         {
