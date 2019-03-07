@@ -1,11 +1,10 @@
 ﻿body {
-    background-image: url("../images/moskenes_norway.jpg");
     background-size: 100%;
 }
 
 .welcome {
     padding-top: 1em;
     font-size: 5em;
-    color: #ffffff;
+    color: #808080;
     text-shadow: 5px 5px 5px #000000;
 }

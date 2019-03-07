@@ -70,7 +70,7 @@ namespace ExternalLogins
 
             app.UseAuthentication();
 
-            app.UseHttpsRedirection(); //If we make an HTTP request, it is redirected to an HTTPS request
+            app.UseHttpsRedirection();
 
             app.UseMvc(routes =>
             {

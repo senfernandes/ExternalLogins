@@ -130,72 +130,11 @@ namespace ExternalLogins.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var user = await _userManager.FindByEmailAsync(model.Email);
-
-        //        if (user == null)
-        //        {
-
-
-        //            return RedirectToAction("Index", "Main");
-        //        }
-
-        //        var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
-        //        if (!result.Succeeded) return View(model);
-        //        await _signInManager.SignInAsync(user, isPersistent: false);
-        //        return RedirectToAction("Index", "LoggedIn");
-        //    }
-
-        //    return View(model);
-
-        //}
-
         public IActionResult ForgotPassword()
         {
 
             return View();
         }
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var user = await _userManager.FindByEmailAsync(model.Email);
-        //        var confirmed = await _userManager.IsEmailConfirmedAsync(user);
-        //        if (user == null || !confirmed)
-        //        {
-
-        //            return View("ForgotPasswordConfirmation");
-        //        }
-        //        // Send Email Confirmation
-
-        //        var code = await _userManager.GeneratePasswordResetTokenAsync(user);
-        //        var callbackUrl = Url.Action("ResetPassword", "Main", new { userId = user.Id, code = code },
-        //              protocol: HttpContext.Request.Scheme);
-        //        await
-        //            _emailSend.SendEmailAsync(model.Email, "Reset Password",
-        //                $"Please Reset you Password by " +
-        //                $"clicking this link:<a href='{callbackUrl}'>Link</a>");
-
-
-        //    }
-
-        //    return View(model);
-
-        //}
-
-        //public IActionResult ForgotPasswordConfirmation()
-        //{
-
-        //    return View();
-        //}
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -279,7 +218,7 @@ namespace ExternalLogins.Controllers
 
                         await _signInManager.SignInAsync(user, isPersistent: false);
 
-                        RedirectToAction("Index", "LoggedIn");
+                        return Redirect(returnUrl);
                     }
                 }
             }
